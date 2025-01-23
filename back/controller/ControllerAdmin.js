@@ -48,7 +48,7 @@ updateRole = async function (req, res) {
 };
 
 module.exports.updateRoleWeb = async function (req, res) {
-  const asw = updateRole(req, res);
+  const asw = await updateRole(req, res);
 
   if (asw) {
     res.redirect("/users/roles");
@@ -58,7 +58,7 @@ module.exports.updateRoleWeb = async function (req, res) {
 };
 
 module.exports.updateRoleAPI = async function (req, res) {
-  const asw = updateRole(req, res);
+  const asw = await updateRole(req, res);
 
   if (asw) {
     res.status(200).end(JSON.stringify(asw));
